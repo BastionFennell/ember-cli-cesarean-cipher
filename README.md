@@ -1,45 +1,42 @@
 # Ember-cli-cesarean-cipher
 
-This README outlines the details of collaborating on this Ember application.
+This is a simple Ember CLI addon that adds a cesarean cipher component, for all
+of your text encryption needs. This was built for the addon blog post on the
+Frontside's website, which you can read
+[here](frontside.io/blog/2014/10/14/building-ember-cli-component-addons.html).
 
-A short introduction of this app could easily go here.
+## Usage
 
-## Prerequisites
+```javascript
+{{cesarean-cipher value="text to be encrypted" shift=IntToShiftBy}}
+```
 
-You will need the following things properly installed on your computer.
+The cesarean cipher will shift each character forward in the alphabet the number
+specified by shift and output that value in your handlebars. For example, if you
+had
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+```javascript
+{{cesarean-cipher value="abc" shift=2}}
+```
+
+it would come out in your template as
+
+```
+cde
+```
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+To use this amazing and versatile component in your own Ember CLI app, simply
+install it with
 
-## Running / Development
+```
+npm install --save ember-cli-cesarean-cipher
+```
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Then, you can use it as if it were any other component within your app. It's
+that simple!
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
