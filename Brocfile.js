@@ -16,5 +16,18 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+var mergeTrees = require('broccoli-merge-trees');
+
+var appTree = mergeTrees(['app', 'app-addon'], { overwrite: true });
+var templateTree = mergeTrees(['app/templates', 'app-addon/templates']);
+
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+var app = new EmberApp({
+  trees: {
+    app: appTree,
+    templates: templateTree
+  }
+});
 
 module.exports = app.toTree();
